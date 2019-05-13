@@ -1,0 +1,91 @@
+---
+title: "Adjusting colors in the Hugo Academic theme"
+author: "Sasha Hararuk"
+date: "May 13, 2019"
+output:
+  html_document: default
+  pdf_document: default
+  word_document: default
+---
+
+
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = TRUE)
+
+```  
+*****************************************************************************************************************  
+  
+## 1. Heading and icon colors
+<font style="font-family: helvetica, serif; font-size:16pt">  
+In this short example I demonstrate how to customize the colors of a website generated Hugo Academic theme. 
+In the "*config.toml*" file in the root directory there are 5 color themes offered for your website: `default`, `ocean`, `forest`, `coffee`, or `dark`. For instance, here's a snippet of my [website](https://oleksandra.netlify.com) with with `forest` theme:  
+ 
+<iframe width="900"
+    height="300"
+src='Forest colors.png' ></iframe>  
+The themes are controlled by five *.toml* files located in **themes/hugo-academic/data/themes**. To create a custom theme, create a new *.toml* file, name it (e.g. "*new_theme.toml*"), then copy and paste in the new file the contents of "*default.toml*". Try changing HEX color codes in **"# Primary"**, **"# Menu"**, and **"# Home sections"**. For instance, changing HEX color code of `"primary"` in **"# Primary"** section to <span style ="color:#e21212">**red**</span> (HEX code #e21212) results in change in color of the contact icons, project tabs, and links:  
+
+<iframe width="900"
+    height="300"
+src='Red primary.png' ></iframe>   
+
+Changing `"primary_light"` and `"primary_dark"` colors in **"# Primary"** section will change the base or highlight colors of the tabs (e.g. in "Projects" section), respectively.  
+
+Changing HEX color code of `"menu_primary"` in **"# Menu"** section to <span style ="color:#e21212">**red**</span> changes background color of the main menu:  
+
+<iframe width="900"
+    height="300"
+src='Red menu bg.png' ></iframe>  
+Other options in the **"# Menu"** section are as follows:  
+
+* `"menu_text"` controls the color of main menu text in the top of the webpage;  
+* `"menu_text_active"` controls the color of main menu text in the top of the webpage when it's highlighted by the cursor or when the user navigates to the corresponding section of the webpage;  
+* `"menu_title"`- not clear on this one (nothing changed when the color was changed).    
+
+Changing HEX color code of `"home_section_odd"` in **"# Home section"** section to <span style ="color:#e21212">**red**</span> changes background color of the odd sections of the website (the numer of sections is equal to the menu sections in top right corner of the website:  
+
+<iframe width="900"
+    height="300"
+src='Red section bg.png' ></iframe>  
+
+
+</font>
+
+*****************************************************************************************************    
+
+
+
+## 2. Text color   
+<font style="font-family: helvetica, serif; font-size:16pt"> 
+
+To change the text color, navigate to **themes/hugo-academic/layouts/partials/css** and open the file "*academic.css*" (opening it with [Notepad ++](https://notepad-plus-plus.org/) will improve file's readability):   
+
+<iframe width="900"
+    height="300"
+src='CSS view.png' ></iframe>  
+
+In line 26, set the color to <span style ="color:#e21212">**red**</span> (#e21212). This will change the color of main text:  
+
+<iframe width="900"
+    height="300"
+src='Red text.png' ></iframe>  
+
+In line 76, set the color to <span style ="color:#e21212">**red**</span> (#e21212). This will change the color of the heading text:  
+
+<iframe width="900"
+    height="300"
+src='Red heading.png' ></iframe>  
+In addition:  
+
+* line 344 controls the color of the name;  
+* line 351 controls the color of the title.  
+
+Lastly, a useful resource for colors and their names is [Google color picker](https://htmlcolors.com/google-color-picker), and the source code for live version my [website](https://oleksandra.netlify.com) with the customized color themes is located at [my github account](https://github.com/ohararuk/website_OH):    
+     
+<iframe width="900"
+    height="300"
+src='https://oleksandra.netlify.com/' ></iframe> 
+
+</font>
